@@ -1,10 +1,19 @@
-const { src, dest, watch } = require("gulp");
+const {
+  src,
+  dest,
+  watch
+} = require("gulp");
 const minifyCss = require("gulp-clean-css");
 const concat = require("gulp-concat");
 const minifyJs = require("gulp-uglify");
 
-const cssfiles = "{fontawsome,splide,tailwind,main}";
-const jsfiles = "{alpine,splide,main}";
+const cssfiles = "{fontawsome,splide,sal,odometer,tailwind,main}";
+const jsfiles = "{alpine,splide,sal,odometer,main}";
+const cssDest = "./public/css";
+const jsDest = "./public/js";
+// const cssDest = "./src/_static/css";
+// const jsDest = "./src/_static/js";
+
 
 const buildCss = () => {
   let csstask = src(`./src/_static/css/${cssfiles}.css`);
@@ -18,7 +27,7 @@ const buildCss = () => {
     })
   );
   csstask = csstask.pipe(concat("bundle.css"));
-  csstask = csstask.pipe(dest("./public/css"));
+  csstask = csstask.pipe(dest(cssDest));
   return csstask;
 };
 
@@ -27,7 +36,7 @@ const buildJs = () => {
 
   jstask = jstask.pipe(minifyJs());
   jstask = jstask.pipe(concat("bundle.js"));
-  jstask = jstask.pipe(dest("./public/js"));
+  jstask = jstask.pipe(dest(jsDest));
   return jstask;
 };
 
