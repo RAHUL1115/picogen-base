@@ -1,9 +1,78 @@
-<header>
-  <div class="flex w-full container mx-auto justify-between">
-    <a href="<%- page.srcfix %>">picogen</a>
-    <nav class="flex space-x-5">
-      <a href="<%- page.srcfix %>">home</a>
-      <a href="<%- page.srcfix %>posts.html">posts</a>
-    </nav>
+<header x-data="{ open: false }" id="navbar" class="fixed bg-white z-10 w-full border-b-2 border-b-indigo-500">
+  <div class="px-4 container md:px-8 mx-auto w-full flex items-center justify-between">
+    <a class="text-3xl font-bold py-1 font-sans" href="<%- page.srcfix %>">
+      <img src="img/logo.png" class="h-[44px]" alt="">
+    </a>
+    <div class="hidden md:flex whitespace-nowrap">
+      <a class="py-4 px-5 text-sm block border-b-2 border-b-transparent transition-all duration-300 font-semibold ease-in-out hover:text-indigo-600 hover:border-b-indigo-500 hover:bg-indigo-100"
+        href="<%-page.srcfix%>">HOME</a>
+      <a class="py-4 px-5 text-sm block border-b-2 border-b-transparent transition-all duration-300 font-semibold ease-in-out hover:text-indigo-600 hover:border-b-indigo-500 hover:bg-indigo-100"
+        href="<%-page.srcfix%>about">ABOUT</a>
+      
+      <span
+        class="relative group cursor-pointer py-4 px-5 text-sm block border-b-2 border-b-transparent transition-all duration-300 font-semibold ease-in-out hover: hover:border-b-indigo-500 hover:bg-indigo-100"
+        href="<%-page.srcfix%>product">
+        <p class="group-hover:text-indigo-600">PRODUCT</p>
+        <span
+          class="absolute top-full min-w-full left-0 divide-y mt-0.5 group-hover:block hidden bg-white rounded-b-lg font-normal overflow-hidden">
+          <a href="<%- page.srcfix %>centrifugal-pipe"
+            class="px-6 hover:text-indigo-600 hover:bg-indigo-100 py-2 block">Centrifugal
+            Pipe</a>
+          <a href="<%- page.srcfix %>ingot-Billet"
+            class="px-6 hover:text-indigo-600 hover:bg-indigo-100 py-2 block">Ingot/Billet</a>
+          <a href="<%- page.srcfix %>round-Bar"
+            class="px-6 hover:text-indigo-600 hover:bg-indigo-100 py-2 block">Round Bar</a>
+        </span>
+      </span>
+      <span
+        class="relative group cursor-pointer py-4 px-5 text-sm block border-b-2 border-b-transparent transition-all duration-300 font-semibold ease-in-out hover: hover:border-b-indigo-500 hover:bg-indigo-100"
+        href="<%-page.srcfix%>product">
+        <p class="group-hover:text-indigo-600">TECHINFO</p>
+        <span
+          class="absolute top-full min-w-full left-0 divide-y mt-0.5 group-hover:block hidden bg-white rounded-b-lg font-normal overflow-hidden">
+          <a href="<%- page.srcfix %>centrifugal-pipe"
+            class="px-6 hover:text-indigo-600 hover:bg-indigo-100 py-2 block">Centrifugal
+            Pipe</a>
+          <a href="<%- page.srcfix %>ingot-Billet"
+            class="px-6 hover:text-indigo-600 hover:bg-indigo-100 py-2 block">Ingot/Billet</a>
+          <a href="<%- page.srcfix %>round-Bar"
+            class="px-6 hover:text-indigo-600 hover:bg-indigo-100 py-2 block">Round Bar</a>
+        </span>
+      </span>
+      <a class="py-4 px-5 text-sm block border-b-2 border-b-transparent transition-all duration-300 font-semibold ease-in-out hover:text-indigo-600 hover:border-b-indigo-500 hover:bg-indigo-100"
+        href="<%-page.srcfix%>contact">CONTACT</a>
+    </div>
+    <div @click="open = !open" class="md:hidden aspect-square p-2 my-2 border flex items-center justify-center rounded">
+      <i class="fal fa-bars"></i>
+    </div>
+    <div @click.away="open = false" x-show="open" x-transition:enter="transition ease-out duration-300"
+      x-transition:enter-start="opacity-0 translate-y-full" x-transition:enter-end="opacity-100 translate-y-0"
+      x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 translate-y-0"
+      x-transition:leave-end="opacity-0 translate-y-full" class="absolute top-full mt-2 left-0 w-full px-2">
+      <div class="bg-white border flex flex-col px-2 divide-y rounded">
+        <a class="py-2 px-2" href="<%- page.srcfix %>">Home</a>
+        <a class="py-2 px-2" href="<%- page.srcfix %>about">About</a>
+        <span x-data="{ opensubnav : false }" class="py-2 px-2">
+          <span @click="opensubnav = !opensubnav" class="flex items-baseline justify-between">Product<i
+              :class="opensubnav?'fa-minus':'fa-plus'" class="fal"></i></span>
+          <div x-show="opensubnav" class="flex flex-col divide-y border-t mt-2">
+            <a class="py-2 ml-3" href="<%- page.srcfix %>centrifugal-pipe">Centrifugal Pipe</a>
+            <a class="py-2 ml-3" href="<%- page.srcfix %>ingot-Billet">Ingot/Billet</a>
+            <a class="py-2 ml-3" href="<%- page.srcfix %>round-Bar">Round Bar</a>
+          </div>
+        </span>
+        <span x-data="{ opensubnav : false }" class="py-2 px-2">
+          <span @click="opensubnav = !opensubnav" class="flex items-baseline justify-between">Techinfo<i
+              :class="opensubnav?'fa-minus':'fa-plus'" class="fal"></i></span>
+          <div x-show="opensubnav" class="flex flex-col divide-y border-t mt-2">
+            <a class="py-2 ml-3" href="<%- page.srcfix %>centrifugal-pipe">Centrifugal Pipe</a>
+            <a class="py-2 ml-3" href="<%- page.srcfix %>ingot-Billet">Ingot/Billet</a>
+            <a class="py-2 ml-3" href="<%- page.srcfix %>round-Bar">Round Bar</a>
+          </div>
+        </span>
+        <a class="py-2 px-2" href="<%- page.srcfix %>contact">Contact</a>
+      </div>
+    </div>
   </div>
 </header>
+<div id="navHeightFix"></div>

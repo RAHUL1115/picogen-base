@@ -11,8 +11,9 @@
   <% if(_production){ %>
   <link rel="stylesheet" href="<%- page.srcfix %>css/bundle.css">
   <% }else{ %>
+  <link rel="stylesheet" href="<%- page.srcfix %>css/fontawsome.css">
+  <link rel="stylesheet" href="<%- page.srcfix %>css/tailwind.css">
   <link rel="stylesheet" href="<%- page.srcfix %>css/main.css">
-  <link rel="stylesheet" href="<%- page.srcfix %>css/tailwind.min.css">
   <% }%>
 </head>
 
@@ -24,6 +25,7 @@
   <% if(_production){ %>
   <script src="<%- page.srcfix %>js/bundle.js"></script>
   <% }else{ %>
+  <script src="<%- page.srcfix %>js/alpine.js"></script>
   <script src="<%- page.srcfix %>js/main.js"></script>
   <% }%>
 </body>

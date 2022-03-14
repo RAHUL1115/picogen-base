@@ -3,7 +3,7 @@ const {
   dest,
   watch
 } = require("gulp");
-const minifyCss = require("gulp-clean-css");
+var csso = require('gulp-csso');
 const concat = require("gulp-concat");
 const minifyJs = require("gulp-uglify");
 
@@ -17,15 +17,7 @@ const jsDest = "./public/js";
 
 const buildCss = () => {
   let csstask = src(`./src/_static/css/${cssfiles}.css`);
-  csstask = csstask.pipe(
-    minifyCss({
-      level: {
-        1: {
-          specialComments: false,
-        },
-      },
-    })
-  );
+  csstask = csstask.pipe(csso());
   csstask = csstask.pipe(concat("bundle.css"));
   csstask = csstask.pipe(dest(cssDest));
   return csstask;
