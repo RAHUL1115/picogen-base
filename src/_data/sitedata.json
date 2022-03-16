@@ -5,7 +5,7 @@
   "copyright": "dummy copyright",
   "image": "image.jpg",
   "favicon": "favicon.ico",
-  "removehtmlext": false,
+  "removehtmlext": true,
   "removehtmlextgen": false,
   "postPath": "/posts",
   "navdata": [
@@ -14,17 +14,17 @@
     [
       "Products",
       [
-        ["Tools and Alloy Steel", "tools-and-alloy-steel.html"],
-        ["Pipes and fitings", "pipe-and-fittings.html"],
-        ["SS sheet coil strips", "ss-sheet.html"],
-        ["SS rod", "ss-rod.html"]
+        ["Tools and Alloy Steel", "tools-and-alloy-steel"],
+        ["Pipes and fitings", "pipe-and-fittings"],
+        ["SS sheet coil strips", "ss-sheet"],
+        ["SS rod", "ss-rod"]
       ]
     ],
     [
       "Techinfo",
       [
-        ["Chemical info", "chemical.html"],
-        ["Mechanical info", "mechanical.html"]
+        ["Chemical info", "techinfo/chemical"],
+        ["Mechanical info", "techinfo/mechanical"]
       ]
     ],
     ["Contact", "contact"]
