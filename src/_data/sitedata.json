@@ -7,5 +7,26 @@
   "favicon": "favicon.ico",
   "removehtmlext": false,
   "removehtmlextgen": false,
-  "postPath": "/posts"
+  "postPath": "/posts",
+  "navdata": [
+    ["Home", ""],
+    ["About", "about"],
+    [
+      "Products",
+      [
+        ["Tools and Alloy Steel", "tools-and-alloy-steel.html"],
+        ["Pipes and fitings", "pipe-and-fittings.html"],
+        ["SS sheet coil strips", "ss-sheet.html"],
+        ["SS rod", "ss-rod.html"]
+      ]
+    ],
+    [
+      "Techinfo",
+      [
+        ["Chemical info", "chemical.html"],
+        ["Mechanical info", "mechanical.html"]
+      ]
+    ],
+    ["Contact", "contact"]
+  ]
 }
