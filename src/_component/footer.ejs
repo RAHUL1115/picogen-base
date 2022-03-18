@@ -1,3 +1,42 @@
-<footer class="container mx-auto">
-  <p>&copy; copyright 2022 picogen</p>
+<footer class="border-t-2 border-t-indigo-600">
+  <div class="container mx-auto">
+    <div class="flex flex-col md:px-12 px-6 md:flex-row py-10 justify-between text-xl space-y-10 md:space-y-0">
+      <div style="flex: 2;" class="space-y-5 flex justify-start items-center">
+        <img src="img/logo.png" class="w-3/4" alt="">
+      </div>
+      <div style="flex: 2;" class="space-y-5">
+        <p class="text-indigo-600">Products</p>
+        <div class="text-sm space-y-1.5">
+          <% site.data.sitedata.footernav[0].forEach(navitem => { %>
+          <a class="block hover:text-indigo-600" href="<%- page.srcfix+navitem[1] %>">
+            <i class="fal fa-angle-right mr-1.5"></i><%-navitem[0]%>
+          </a>
+          <% }) %>
+        </div>
+      </div>
+      <div style="flex: 2;" class="space-y-5">
+        <p class="text-indigo-600">Quick Links</p>
+        <div class="text-sm space-y-1.5">
+          <% site.data.sitedata.footernav[1].forEach(navitem => { %>
+          <a class="block hover:text-indigo-600" href="<%- page.srcfix+navitem[1] %>">
+            <i class="fal fa-angle-right mr-1.5"></i><%-navitem[0]%>
+          </a>
+          <% }) %>
+        </div>
+      </div>
+      <div style="flex: 2;" class="space-y-5">
+        <p class="text-indigo-600">Contacts</p>
+        <div class="text-sm space-y-1.5">
+          <p class="block"><i class="fad fa-building mr-1.5 text-indigo-600"></i>
+            2/A, 1st Flr, Bldg. No. 16, 2nd Carpenter Street, Nanubhai Desai Rd., Nr. C.P. Tank, Mumbai - 400 004
+          </p>
+          <a href="mailto:vinayaksteelvsi@yahoo.com" class="block hover:text-indigo-600" href=""><i
+              class="fad fa-envelope mr-1.5 text-indigo-600"></i>bsc@yahoo.com</a>
+          <a href="tel:+919833631795" class="block hover:text-indigo-600" href=""><i
+              class="fad fa-phone-alt mr-1.5 text-indigo-600"></i>+91 74982 71968</a>
+        </div>
+      </div>
+    </div>
+    <p class="text-center text-indigo-600 text-sm py-2 px-6">Copyright © 2022 picogen</p>
+  </div>
 </footer>

@@ -14,19 +14,25 @@
     [
       "Products",
       [
-        ["Tools and Alloy Steel", "tools-and-alloy-steel"],
-        ["Pipes and fitings", "pipe-and-fittings"],
-        ["SS sheet coil strips", "ss-sheet"],
-        ["SS rod", "ss-rod"]
-      ]
-    ],
-    [
-      "Techinfo",
-      [
-        ["Chemical info", "techinfo/chemical"],
-        ["Mechanical info", "techinfo/mechanical"]
+        ["product 1", "product-1"],
+        ["product 2", "product-2"],
+        ["product 3", "product-3"],
+        ["product 4", "product-4"]
       ]
     ],
     ["Contact", "contact"]
+  ],
+  "footernav": [
+    [
+      ["product 1", "product-1"],
+      ["product 2", "product-2"],
+      ["product 3", "product-3"],
+      ["product 4", "product-4"]
+    ],
+    [
+      ["Home", ""],
+      ["About", "about"],
+      ["Contact", "contact"]
+    ]
   ]
 }
